@@ -1,30 +1,13 @@
 import { useState } from 'react';
 import './CostForm.css';
 
-const CostForm = ({ onSaveCostData }) => {
-
+const CostForm = ({ onSaveCostData, onCancel }) => {
   const [inputName, setInputName] = useState('');
   const [inputAmount, setInputAmount] = useState('');
   const [inputDate, setInputDate] = useState('');
 
-  // const [userInput, setUserInput] = useState({
-  //   name: '',
-  //   amount: '',
-  //   date: ''
-  // });
-
   const nameChangeHandler = (event) => {
     setInputName(event.target.value);
-    // setUserInput({
-    //   ...userInput,
-    //   name: event.target.value
-    // })
-    // setUserInput((previousState) => {
-    //   return {
-    //     ...previousState,
-    //     name: event.target.value
-    //   }
-    // })
   };
 
   const amountChangeHandler = (event) => {
@@ -39,7 +22,7 @@ const CostForm = ({ onSaveCostData }) => {
     event.preventDefault();
 
     const costData = {
-      name: inputName,
+      description: inputName,
       amount: inputAmount,
       date: new Date(inputDate)
     };
@@ -84,6 +67,7 @@ const CostForm = ({ onSaveCostData }) => {
         </div>
         <div className="new-cost__actions">
           <button type="submit">Добавить расход</button>
+          <button type='button' onClick={onCancel}>Отмена</button>
         </div>
       </div>
     </form>

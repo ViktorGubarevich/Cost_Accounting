@@ -4,6 +4,7 @@ import "./CostItem.css";
 
 const CostItem = ({ date, description, amount }) => {
 return (
+  <li>
     <Card className="cost-item">
       <CostDate date={date} />
       <div className="cost-item__description">
@@ -11,6 +12,7 @@ return (
         <div className="cost-item__price">${amount}</div>
       </div>
     </Card>
+  </li>    
   );
 };
 
