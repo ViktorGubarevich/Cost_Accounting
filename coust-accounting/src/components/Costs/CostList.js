@@ -1,9 +1,9 @@
 import "./CostList.css";
 import CostItem from "./CostItem";
 
-const ConsList = ({costs}) => {
+const ConsList = ({ costs }) => {
   if (costs.length === 0) {
-    return <h2 className="cost-list__fallback">В этом году расходов нет!</h2>
+    return <h2 className="cost-list__fallback">В этом году расходов нет!</h2>;
   }
 
   return (
@@ -17,7 +17,7 @@ const ConsList = ({costs}) => {
         />
       ))}
     </ul>
-  )
+  );
 };
 
 export default ConsList;

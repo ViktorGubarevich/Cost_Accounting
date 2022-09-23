@@ -6,8 +6,7 @@ import { useState } from "react";
 import CostDiagram from "./CostsDiagram";
 
 const Costs = ({ costs }) => {
-
-  const [selectedYear, setSelectedYear] = useState('2021');
+  const [selectedYear, setSelectedYear] = useState("2021");
 
   const yearChangeHandler = (year) => {
     setSelectedYear(year);
@@ -19,15 +18,11 @@ const Costs = ({ costs }) => {
 
   return (
     <Card className="costs">
-      <CostsFilter 
-        year={selectedYear}
-        onChangeYear={yearChangeHandler}
-      />
+      <CostsFilter year={selectedYear} onChangeYear={yearChangeHandler} />
       <CostDiagram costs={filteredCosts} />
       <CostList costs={filteredCosts} />
-    </Card>    
+    </Card>
   );
 };
 
 export default Costs;
-  

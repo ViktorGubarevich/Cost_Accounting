@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import CostForm from './CostForm';
-import './NewCost.css'
+import { useState } from "react";
+import CostForm from "./CostForm";
+import "./NewCost.css";
 
 const NewCost = ({ onAddCost }) => {
   const [isFormVisible, setIsFormVisible] = useState(false);
@@ -8,7 +8,7 @@ const NewCost = ({ onAddCost }) => {
   const saveCostDataHandler = (inputCostData) => {
     const costData = {
       ...inputCostData,
-      id: Math.random().toString()
+      id: Math.random().toString(),
     };
     onAddCost(costData);
     setIsFormVisible(false);
@@ -28,11 +28,11 @@ const NewCost = ({ onAddCost }) => {
         <button onClick={inputCostDataHandler}>Добавить новый расход</button>
       )}
       {isFormVisible && (
-        <CostForm 
+        <CostForm
           onSaveCostData={saveCostDataHandler}
           onCancel={cancelCostHandler}
         />
-      )}      
+      )}
     </div>
   );
 };
