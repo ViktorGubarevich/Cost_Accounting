@@ -3,6 +3,7 @@ import CostsFilter from "./CostsFilter";
 import CostList from "./CostList";
 import "./Costs.css";
 import { useState } from "react";
+import CostDiagram from "./CostsDiagram";
 
 const Costs = ({ costs }) => {
 
@@ -22,6 +23,7 @@ const Costs = ({ costs }) => {
         year={selectedYear}
         onChangeYear={yearChangeHandler}
       />
+      <CostDiagram costs={filteredCosts} />
       <CostList costs={filteredCosts} />
     </Card>    
   );
